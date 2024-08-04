@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiệm Bánh của WON</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header, footer {
+            background-color: #f4f4f4;
+            padding: 10px;
+            text-align: center;
+        }
+        header {
+            background-image: url('images/header-bg.jpg');
+            background-size: cover;
+            color: black;
+        }
+        footer {
+            background-image: url('images/footer-bg.jpg');
+            background-size: cover;
+            color: rgb(6, 1, 1);
+        }
+        main {
+            padding: 20px;
+        }
+        .section-gap {
+            margin-bottom: 20px;
+            background-size: cover;
+            padding: 20px;
+        }
+        #home {
+            background-image: url('bg1.1.jpg');
+            text-align: center; 
+        }
+        #home h1, #home p {
+            color: black; 
+            font-weight: bold; 
+        }
+        #products {
+            background-image: url('h1.jpg');
+        }
+        #offers {
+            background-image: url('ttt.jpg');
+        }
+        #cart {
+            background-image: url('nen.jpg');
+        }
+        #checkout {
+            background-image: url('nen.jpg');
+        }
+        .hidden {
+            display: none;
+        }
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .product-item {
+            width: calc(25% - 20px);
+            border: 1px solid #ddd;
+            padding: 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            background-color: white;
+        }
+        .product-item img {
+            max-width: 100%;
+            height: auto;
+        }
+        .product-item .price {
+            font-weight: bold;
+            color: #28a745;
+        }
+        .cart-summary {
+            margin-top: 20px;
+        }
+        .cart-item {
+            margin-bottom: 10px;
+        }
+        .remove-item {
+            color: red;
+            cursor: pointer;
+        }
+        #checkout-form label {
+            display: block;
+            margin-top: 10px;
+        }
+        #checkout-form input, #checkout-form select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+        #checkout-form button {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #28a745;
+            color: black;
+            border: none;
+            cursor: pointer;
+        }
+        #checkout-form button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tiệm Bánh của WON</h1>
+        <nav>
+            <a href="#home" onclick="showSection('home')">Trang Chủ</a> |
+            <a href="#products" onclick="showSection('products')">Sản Phẩm</a> |
+            <a href="#offers" onclick="showSection('offers')">Ưu Đãi</a> |
+            <a href="#cart" onclick="showSection('cart')">Giỏ Hàng</a> |
+            <a href="#checkout" onclick="showSection('checkout')">Thanh Toán</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="section-gap">
+            <h1>Chào Mừng Đến Tiệm Bánh của WON</h1>
+            <p>Chúng tôi cung cấp những loại bánh ngon nhất và các loại nước uống tươi mát để bạn thưởng thức. Chúng tôi cam kết sử dụng nguyên liệu tươi ngon và chất lượng nhất để đảm bảo mỗi món bánh và nước uống đều hoàn hảo.</p>
+            <p>Đội ngũ của chúng tôi luôn nỗ lực để mang đến cho bạn những sản phẩm tốt nhất. Hãy đến và trải nghiệm những hương vị độc đáo và tuyệt vời tại tiệm bánh của chúng tôi.</p>
+            <p>Chúng tôi có một loạt các loại bánh từ truyền thống đến hiện đại, cùng với các loại nước uống phong phú để phục vụ bạn.</p>
+            <p>Mỗi sản phẩm của chúng tôi đều được chế biến với tình yêu và sự chăm sóc để đảm bảo bạn hài lòng khi thưởng thức.</p>
+            <p>Hãy tham khảo các ưu đãi hấp dẫn của chúng tôi để có những trải nghiệm mua sắm tuyệt vời nhất.</p>
+            <p>Chúng tôi cung cấp dịch vụ giao hàng nhanh chóng và miễn phí cho đơn hàng trên một mức giá nhất định.</p>
+            <p>Chúng tôi luôn sẵn sàng lắng nghe phản hồi của bạn để cải thiện chất lượng dịch vụ của mình.</p>
+            <p>Đừng bỏ lỡ cơ hội thưởng thức những sản phẩm đặc biệt chỉ có tại Tiệm Bánh của WON.</p>
+            <p>Cảm ơn bạn đã lựa chọn chúng tôi là điểm đến cho nhu cầu thưởng thức bánh và nước uống của bạn.</p>
+            <p>Chúng tôi hy vọng bạn có một trải nghiệm tuyệt vời tại tiệm bánh của chúng tôi.</p>
+        </section>
+
+        <section id="products" class="section-gap">
+            <h1>Sản Phẩm</h1>
+            <h2>Bánh</h2>
+            <div class="product-grid">
+                <div class="product-item" data-name="Bánh Raspberry" data-price="52.17">
+                    <img src="13.jpg" alt="Bánh Raspberry">
+                    <h3>Bánh Raspberry</h3>
+                    <div class="price">$52.17</div>
+                    <button onclick="addToCart(this)">Thêm vào giỏ hàng</button>
+                </div>
+                <div class="product-item" data-name="Bánh Socola" data-price="45.00">
+                    <img src="so.png" alt="Bánh Socola">
+                    <h3>Bánh Socola</h3>
+                    <div class="price">$45.00</div>
+                    <button onclick="addToCart(this)">Thêm vào giỏ hàng</button>
+                </div>
+                <div class="product-item" data-name="Bánh Dâu Tây" data-price="50.00">
+                    <img src="12.jpg" alt="Bánh Dâu Tây">
+                    <h3>Bánh Dâu Tây</h3>
+                    <div class="price">$50.00</div>
+                    <button onclick="addToCart(this)">Thêm vào giỏ hàng</button>
+                </div>
+                <div class="product-item" data-name="Bánh Đào" data-price="60.00">
+                    <img src="4.jpg" alt="Bánh Đào">
+                    <h3>Bánh Đào</h3>
+                    <div class="price">$60.00</div>
+                    <button onclick="addToCart(this)">Thêm vào giỏ hàng</button>
+                </div>
+                <div class="product-item" data-name="Bánh Cacao" data-price="48.00">
+                    <img src="ca.jpg" alt="Bánh Cacao">
+                    <h3>Bánh Cacao</h3>
+                    <div class="price">$48.00</div>
+                    <button onclick="addToCart(this)">Thêm vào giỏ hàng</button>
+                </div>
+                <div class="product-item" data-name="Bánh Matcha" data-price="55.00">
+                    <img src="6.png" alt="Bánh Matcha">
+                    <h3>Bánh Matcha</h3>
+                    <div class="price">$55.00</div>
+                    <button onclick="addToCart(this)">Thêm vào giỏ hàng</button>
+                </div>
+                <div class="product-item" data-name="Bánh Trứng Muối" data-price="53.00">
+                    <img src="7.jpg" alt="Bánh Trứng Muối">
+                    <h3>Bánh Trứng Muối</h3>
+                    <div class="price">$53.00</div>
+                    <button onclick="addToCart(this)">Thêm vào giỏ hàng</button>
+                </div>
+                <div class="product-item" data-name="Bánh Hạt Dẻ" data-price="57.00">
+                    <img src="de.jpg" alt="Bánh Hạt Dẻ">
+                    <h3>Bánh Hạt Dẻ</h3>
+                    <div class="price">$57.00</div>
+                    <button onclick="addToCart(this)">Thêm vào giỏ hàng</button>
+                </div>
+                <div class="product-item" data-name="Bánh Hạnh Nhân" data-price="62.00">
+                    <img src="9.png" alt="Bánh Hạnh Nhân">
+                    <h3>Bánh Hạnh Nhân</h3>
+                    <div class="price">$62.00</div>
+                    <button onclick="addToCart(this)">Thêm vào giỏ hàng</button>
+                </div>
+                <div class="product-item" data-name="Bánh Táo" data-price="58.00">
+                    <img src="tao.jpg" alt="Bánh Táo">
+                    <h3>Bánh Táo</h3>
+                    <div class="price">$58.00</div>
+                    <button onclick="addToCart(this)">Thêm vào giỏ hàng</button>
+                </div>
+                <div class="product-item" data-name="Bánh Hạnh Nhân Cacao" data-price="70.00">
+                    <img src="hccc.jpg" alt="Bánh Hạnh Nhân Cacao">
+                    <h3>Bánh Hạnh Nhân Cacao</h3>
+                    <div class="price">$70.00</div>
+                    <button onclick="addToCart(this)">Thêm vào giỏ hàng</button>
+                </div>
+                <div class="product-item" data-name="Tiramisu" data-price="65.00">
+                    <img src="tira.jpg" alt="Tiramisu">
+                    <h3>Tiramisu</h3>
+                    <div class="price">$65.00</div>
+                    <button onclick="addToCart(this)">Thêm vào giỏ hàng</button>
+                </div>
+                <div class="product-item" data-name="Bánh Sinh Nhật" data-price="59.00">
+                    <img src="hp.jpg" alt="Bánh Sinh Nhật">
+                    <h3>Bánh Sinh Nhật</h3>
+                    <div class="price">$59.00</div>
+                    <button onclick="addToCart(this)">Thêm vào giỏ hàng</button>
+                </div>
+                <div class="product-item" data-name="Bánh Cà Phê" data-price="66.00">
+                    <img src="cof.jpg" alt="Bánh Cà Phê">
+                    <h3>Bánh Cà Phê</h3>
+                    <div class="price">$66.00</div>
+                    <button onclick="addToCart(this)">Thêm vào giỏ hàng</button>
+                </div>
+                <div class="product-item" data-name="Bánh Sầu Riêng" data-price="70.00">
+                    <img src="sr.webp" alt="Bánh Sầu Riêng">
+                    <h3>Bánh Sầu Riêng </h3>
+                    <div class="price">$70.00</div>
+                    <button onclick="addToCart(this)">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
+
+            <h2>Nước Uống</h2>
+            <div class="product-grid">
+                <!-- Các loại nước uống -->
+                <div class="product-item" data-name="Nước Ép Táo" data-price="3.00">
+                    <img src="tao1.jpg" alt="Nước Ép Táo">
+                    <h3>Nước Ép Táo</h3>
+                    <div class="price">$3.00</div>
+                    <button onclick="addToCart(this)">Thêm vào giỏ hàng</button>
+                </div>
+                <div class="product-item" data-name="Nước Cam" data-price="3.50">
+                    <img src="cam.jpg" alt="Nước Cam">
+                    <h3>Nước Cam</h3>
+                    <div class="price">$3.50</div>
+                    <button onclick="addToCart(this)">Thêm vào giỏ hàng</button>
+                </div>
+                <div class="product-item" data-name=" Coffee" data-price="3.20">
+                    <img src="coffee.webp" alt="Coffee">
+                    <h3>Coffee</h3>
+                    <div class="price">$3.20</div>
+                    <button onclick="addToCart(this)">Thêm vào giỏ hàng</button>
+                </div>
+                <div class="product-item" data-name="Nước Chanh" data-price="2.80">
+                    <img src="chanh.jpg" alt="Nước Chanh">
+                    <h3>Nước Chanh</h3>
+                    <div class="price">$2.80</div>
+                    <button onclick="addToCart(this)">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="offers" class="section-gap">
+            <h2>Ưu Đãi</h2>
+            <p>1. Giảm giá 10% cho đơn hàng trên 50 USD.</p>
+            <p>2. Mua 1 tặng 1 cho các loại nước uống vào cuối tuần.</p>
+            <p>3. Giảm giá 15% cho khách hàng mua hàng lần đầu.</p>
+            <p>4. Miễn phí giao hàng cho đơn hàng trên 100 USD.</p>
+            <p>5. Tặng kèm món quà đặc biệt cho các đơn hàng từ 75 USD.</p>
+            <p>6. Chương trình khách hàng thân thiết với điểm thưởng và ưu đãi đặc biệt.</p>
+        </section>
+
+        <section id="cart" class="section-gap">
+            <h2>Giỏ Hàng</h2>
+            <div id="cart-items"></div>
+            <div class="cart-summary">
+                Tổng: <span id="cart-total">$0.00</span>
+            </div>
+            <button onclick="showSection('checkout')">Thanh Toán</button>
+        </section>
+
+        <section id="checkout" class="section-gap">
+            <h2>Thanh Toán</h2>
+            <form id="checkout-form">
+                <label for="payment-method">Chọn phương thức thanh toán:</label>
+                <select id="payment-method" name="payment-method">
+                    <option value="bank">Chuyển khoản ngân hàng</option>
+                    <option value="momo">MoMo</option>
+                </select>
+                <label for="address">Địa chỉ:</label>
+                <input type="text" id="address" name="address" required>
+                <label for="phone">Số điện thoại:</label>
+                <input type="tel" id="phone" name="phone" required>
+                <label for="recipient-name">Tên người nhận:</label>
+                <input type="text" id="recipient-name" name="recipient-name" required>
+                <button type="submit">Xác Nhận</button>
+            </form>
+            <p id="success-message" class="hidden">Thanh toán thành công!</p>
+            <p id="maintenance-message" class="hidden">Hiện tại chúng tôi đang bảo trì phương thức thanh toán ngân hàng. Vui lòng chọn phương thức thanh toán khác.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy;  Tiệm Bánh của WON. Tất cả quyền được bảo lưu. Tiệm Bánh của WON có quyền quyết định cuối cùng với bất kì sự tranh chấp nào!
+                Hotline 01001010101010.
+        </p>
+    </footer>
+
+    <script>
+        function showSection(id) {
+            document.querySelectorAll('main > section').forEach(function(section) {
+                section.style.display = 'none';
+            });
+            document.getElementById(id).style.display = 'block';
+        }
+
+        function addToCart(button) {
+            var item = button.parentElement;
+            var name = item.getAttribute('data-name');
+            var price = item.getAttribute('data-price');
+            var cartItems = document.getElementById('cart-items');
+            var total = document.getElementById('cart-total');
+
+            var existingItem = document.querySelector('#cart-items div[data-name="' + name + '"]');
+            if (existingItem) {
+                var quantityElement = existingItem.querySelector('.quantity');
+                quantityElement.textContent = parseInt(quantityElement.textContent) + 1;
+            } else {
+                var newItem = document.createElement('div');
+                newItem.classList.add('cart-item');
+                newItem.setAttribute('data-name', name);
+                newItem.innerHTML = name + ' - $' + price + ' <span class="quantity">1</span> <span class="remove-item" onclick="removeFromCart(this)">Xóa</span>';
+                cartItems.appendChild(newItem);
+            }
+
+            var currentTotal = parseFloat(total.textContent.replace('$', ''));
+            var newTotal = currentTotal + parseFloat(price);
+            total.textContent = '$' + newTotal.toFixed(2);
+        }
+
+        function removeFromCart(element) {
+            var item = element.parentElement;
+            var price = parseFloat(item.innerHTML.match(/\$([\d.]+)/)[1]);
+            item.remove();
+
+            var total = document.getElementById('cart-total');
+            var currentTotal = parseFloat(total.textContent.replace('$', ''));
+            var newTotal = currentTotal - price;
+            total.textContent = '$' + newTotal.toFixed(2);
+        }
+
+        document.getElementById('checkout-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var paymentMethod = document.getElementById('payment-method').value;
+            if (paymentMethod === 'bank') {
+                document.getElementById('maintenance-message').classList.remove('hidden');
+            } else {
+                document.getElementById('success-message').classList.remove('hidden');
+                document.getElementById('checkout-form').reset();
+                document.getElementById('cart-items').innerHTML = '';
+                document.getElementById('cart-total').textContent = '$0.00';
+            }
+        });
+
+        showSection('home');
+    </script>
+</body>
+</html>
